@@ -1,0 +1,39 @@
+/* src/styles/SearchBar.css */
+.search-bar {
+    width: 100%;
+    margin: 0 auto 20px;
+    max-width: 600px;
+}
+
+.search-bar form {
+    display: flex;
+    width: 100%;
+}
+
+.search-bar input {
+    flex: 1;
+    padding: 12px 15px;
+    font-size: 16px;
+    border: 2px solid #ddd;
+    border-radius: 4px 0 0 4px;
+    outline: none;
+}
+
+.search-bar input:focus {
+    border-color: #3498db;
+}
+
+.search-bar button {
+    padding: 12px 20px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 0 4px 4px 0;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.search-bar button:hover {
+    background-color: #2980b9;
+}

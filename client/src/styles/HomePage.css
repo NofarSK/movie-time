@@ -1,0 +1,180 @@
+/* Add animation keyframes at the top */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.home-page {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.home-page h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.loading {
+    text-align: center;
+    font-size: 20px;
+    padding: 40px;
+}
+
+.movie-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 25px;
+}
+
+/* Animation for movie cards */
+.movie-card {
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+
+    /* Apply animation */
+    animation: fadeInUp 0.6s ease forwards;
+
+    /* Make cards appear with a staggered delay based on their position */
+    opacity: 0;
+}
+
+/* Create a staggered effect for the cards */
+.movie-card:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.movie-card:nth-child(2) {
+    animation-delay: 0.15s;
+}
+
+.movie-card:nth-child(3) {
+    animation-delay: 0.2s;
+}
+
+.movie-card:nth-child(4) {
+    animation-delay: 0.25s;
+}
+
+.movie-card:nth-child(5) {
+    animation-delay: 0.3s;
+}
+
+.movie-card:nth-child(6) {
+    animation-delay: 0.35s;
+}
+
+.movie-card:nth-child(7) {
+    animation-delay: 0.4s;
+}
+
+.movie-card:nth-child(8) {
+    animation-delay: 0.45s;
+}
+
+.movie-card:nth-child(9) {
+    animation-delay: 0.5s;
+}
+
+.movie-card:nth-child(10) {
+    animation-delay: 0.55s;
+}
+
+/* Add more if needed for larger grids */
+
+.movie-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+}
+
+.movie-poster {
+    width: 100%;
+    height: 330px;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+
+/* Add a slight zoom effect on poster hover */
+.movie-card:hover .movie-poster {
+    transform: scale(1.05);
+}
+
+.movie-info {
+    padding: 15px;
+}
+
+.movie-info h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.movie-info p {
+    color: #555;
+    margin: 5px 0;
+}
+
+.load-more-container {
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+/* Animate the "Load More" button */
+.load-more-button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    min-width: 200px;
+}
+
+.load-more-button:hover:not(:disabled) {
+    background-color: #2980b9;
+    transform: translateY(-2px);
+}
+
+.load-more-button:active:not(:disabled) {
+    transform: translateY(1px);
+}
+
+.load-more-button:disabled {
+    background-color: #95a5a6;
+    cursor: not-allowed;
+}
+
+/* Add animation for newly loaded movies */
+@keyframes newMovieAppear {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* This class will be added programmatically to new movies */
+.new-movie {
+    animation: newMovieAppear 0.5s ease forwards;
+}
